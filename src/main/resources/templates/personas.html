@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Informacion Basica</title>
+        <link rel="stylesheet" th:href="@{/css/normalize.css}">
+        <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" th:href="@{/css/estilo.css}">
+
+
+    </head>
+
+    <body>
+      <br>
+      <br>
+
+      <form th:action="@{/home/registrarPersonas}" method="post">
+      
+        <h1>Personas</h1>
+        
+        <fieldset>
+
+          <legend><span class="number">1</span>Vive con personas de alguna de estas caracteristicas</legend>
+
+
+          <input type="checkbox" id="mayor" name="mas60" th:checked="${mas60}"><label for="embarazo" class="light">Mayores de 60 años</label><br>
+
+          <input type="checkbox" id="menores" name="menos15" th:checked="${menos15}"><label for="embarazo" class="light">Menores de 15 años</label><br>
+
+          <input type="checkbox" id="sectorSalud" name="salud" th:checked="${salud}"><label for="embarazo" class="light">Del sector de la salud</label>
+          <br>
+          <br>
+
+          <legend><span class="number">2</span>Contactar en caso de emergencia a:</legend>
+          <label for="name">Nombre Contacto:</label>
+          <input type="text" id="contactoNombre" name="contactoNombre" th:if="${contactoNombre != null}" th:value="${contactoNombre}">
+                <input type="text" id="contactoNombre" name="contactoNombre" th:if="${contactoNombre == null}">
+
+          <label for="name">Telefono de Contacto:</label>
+          <input type="text" id="telefono" name="contactoTelefono" th:if="${contactoTelefono != null}" th:value="${contactoTelefono}">
+                <input type="text" id="telefono" name="contactoTelefono" th:if="${contactoTelefono == null}">
+
+
+   		<input id="documento" name="documento" type="hidden" th:value="${documento}"/>
+   
+        </fieldset>
+    
+        <button type="submit">Actualizar</button>
+      </form>
+      
+ 
+        
+      
+    </body>
+</html>
+</body>
+</html>

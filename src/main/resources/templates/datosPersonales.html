@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Informacion Basica</title>
+        <link rel="stylesheet" th:href="@{/css/normalize.css}">
+        <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" th:href="@{/css/estilo.css}">
+
+
+    </head>
+
+    <body>
+
+        <form th:action="@{/home/registrarDatosPersonales}" method="post">
+
+            <h1>Datos Personales</h1>
+
+            <fieldset>
+                <legend><span class="number">1</span>Informacion Personal</legend>
+                <label for="name" th:if="${documento != null}" >Documento:</label>
+                <input type="text" id="documeto" disabled="disabled" name="documento" th:if="${documento != null}" th:value="${documento}">
+                <input id="documento" name="documento" type="hidden" th:value="${documento}" th:if="${documento != null}"/>
+                
+                <label for="name" th:if="${documento == null}">Documento:</label>
+                <input type="text" id="documeto" name="documento" th:if="${documento == null}">
+
+                <label for="name" th:if="${nombre != null}">Nombre Completo:</label>
+                <input type="text" id="nombre" name="nombre" th:if="${nombre != null}" th:value="${nombre}">
+                
+                <label for="name" th:if="${nombre == null}">Nombre Completo:</label>
+                <input type="text" id="nombre" name="nombre" th:if="${nombre == null}">
+
+                <label for="name">Fecha de nacimiento:</label>
+                <input type="date" id="fecha" name="fechaNacimiento" th:if="${fechaNacimiento != null}" th:value="${fechaNacimiento}">
+                <input type="date" id="fecha" name="fechaNacimiento" th:if="${fechaNacimiento == null}">
+
+                <label for="name">Numero de telefono:</label>
+                <input type="text" id="telefono" name="telefono" th:if="${telefono != null}" th:value="${telefono}">
+                <input type="text" id="telefono" name="telefono" th:if="${telefono == null}">
+
+                <label for="job">Tipo de persona:</label>
+                <select id="tipoPersona" name="tipoPersona" th:if="${tipoPersona != null}">
+            <option th:if="${tipoPersona != 1}" value="1">Docente</option>
+            <option th:if="${tipoPersona != 2}" value="2">Estudiante</option>
+            <option th:if="${tipoPersona != 3}" value="3">Administrativo</option>
+            <option th:if="${tipoPersona != 4}" value="4">Contratista</option>
+            <option th:if="${tipoPersona == 1}" selected value="1">Docente</option>
+            <option th:if="${tipoPersona == 2}" selected value="2">Estudiante</option>
+            <option th:if="${tipoPersona == 3}" selected value="3">Administrativo</option>
+            <option th:if="${tipoPersona == 4}" selected value="4">Contratista</option>
+             </select>
+             
+                <select id="tipoPersona" name="tipoPersona" th:if="${tipoPersona == null}">
+            <option value="1">Docente</option>
+            <option value="2">Estudiante</option>
+            <option value="3">Administrativo</option>
+            <option value="4">Contratista</option>
+             </select>
+
+                <label for="job">EPS:</label>
+                <select id="tipoSalud" name="eps" th:if="${eps != null}">
+            <option th:if="${eps != 1}" value="1">ARS-Subsidiado</option>
+            <option th:if="${eps != 2}" value="2">Medimas</option>
+            <option th:if="${eps != 3}" value="3">Nueva EPS</option>
+            <option th:if="${eps != 4}" value="5">Comparta</option>  
+            <option th:if="${eps != 5}" value="6">Comfacor</option>  
+            <option th:if="${eps == 1}" selected value="1">ARS-Subsidiado</option>
+            <option th:if="${eps == 2}" selected value="2">Medimas</option>
+            <option th:if="${eps == 3}" selected value="3">Nueva EPS</option>
+            <option th:if="${eps == 4}" selected value="5">Comparta</option>  
+            <option th:if="${eps == 5}" selected value="6">Comfacor</option>         
+          </select>
+          
+          <select id="tipoSalud" name="eps" th:if="${eps == null}">
+            <option value="1">ARS-Subsidiado</option>
+            <option value="2">Medimas</option>
+            <option value="3">Nueva EPS</option>
+            <option value="5">Comparta</option>  
+            <option value="6">Comfacor</option>         
+          </select>
+
+                <label for="job">Genero:</label>
+                <select id="genero" name="genero" th:if="${genero != null}">
+            <option th:if="${genero != 'M'}" value="M">Masculino</option>
+            <option th:if="${genero != 'F'}" value="F">Femenino</option>  
+            <option th:if="${genero == 'M'}" selected value="M">Masculino</option>
+            <option th:if="${genero == 'F'}" selected value="F">Femenino</option>         
+          </select>    
+          <select id="genero" name="genero" th:if="${genero == null}">
+            <option value="M">Masculino</option>
+            <option value="F">Femenino</option>         
+          </select>    
+
+           <input type="checkbox" id="embarazo" name="embarazo" th:checked="${embarazo}"><label for="embarazo" class="light">Embarazo</label><br>
+
+                <br>
+                <label for="job">Modalidad:</label>
+                <select id="modalidad" name="modalidad" th:if="${modalidad != null}">
+            <option th:if="${genero != '1'}" value="1">Trabajo en casa</option>
+            <option th:if="${genero != '2'}" value="2">Presencial</option>  
+            <option th:if="${genero == '1'}" selected value="1">Trabajo en casa</option>
+            <option th:if="${genero == '2'}" selected value="2">Presencial</option> 
+          </select>
+          
+          <select id="modalidad" name="modalidad" th:if="${modalidad == null}">
+            <option value="1">Trabajo en casa</option>
+            <option value="2">Presencial</option>
+          </select>
+            </fieldset>
+
+
+            <button type="submit">Actualizar</button>
+            <button><a th:href="@{/home}">Regresar</a></button>
+        </form>
+
+    </body>
+
+</html>
+</body>
+
+</html>

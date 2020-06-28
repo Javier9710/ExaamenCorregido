@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Lectura E Ingreso De Visitas</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel='stylesheet' type='text/css' media='screen'
+	th:href="@{css/home.css}" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<!-- Compiled and minified JavaScript -->
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</head>
+
+<body>
+
+	<br>
+	<br>
+
+
+	<div id="services" class="container-fluid text-center">
+		<h1>Registro de Ingresos UFPS</h1>
+		<br> <br> 
+		<div>
+			<a th:href="@{/home/qr}" th:method="post">
+				<div >
+					<img th:src="@{/img/codigo-qr.png}">
+					<h4>Ingreso Por QR</h4>
+				</div>
+			</a> 
+			<div class="row slideanim">
+			<a th:href="@{/home/validarVisitantes}">
+				<div class="col-sm-6">
+					<img width="100" height="100" th:src="@{/img/visitantes.png}">
+					<h4>Registro Visitantes</h4>
+				</div>
+			</a> <a th:href="@{/home/validarComunidad}">
+				<div class="col-sm-6">
+					<img th:src="@{/img/comunidad.png}" width="109">
+					<h4>Registro Comunidad</h4>
+				</div>
+			</a>
+	</div>
+		</div>
+		<a th:href="@{/logout}">
+		<button style="width: 32%;
+    font-size: 200%;
+    background: #89f9d5eb;">Salir</button>
+    </a>
+		<br> <br>
+	</div>
+	<br>
+	<br>
+
+
+	</section>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<!-- Compiled and minified CSS -->
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+		integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+		crossorigin="anonymous"></script>
+
+
+	<script th:if="${error != null}" type="text/javascript">
+		$(document).ready(function() {
+			var toastHTML = '<span>' + "[[${error}]]" + '</span>';
+			M.toast({
+				html : toastHTML
+			});
+		});
+	</script>
+	<script th:if="${success != null}" type="text/javascript">
+		$(document).ready(function() {
+			var toastHTML = '<span>' + "[[${success}]]" + '</span>';
+			M.toast({
+				html : toastHTML
+			});
+		});
+	</script>
+
+</body>
+
+</html>

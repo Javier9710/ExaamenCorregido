@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registro Ingresos</title>
+        <link rel="stylesheet" th:href="@{/css/normalize.css}">
+        <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" th:href="@{/css/estilo.css}">
+
+
+    </head>
+
+    <body>
+      <br>
+      <br>
+
+      <form th:action="@{/home/registrarComorbilidades}" method="post">
+      
+        <h1>Cormobilidades</h1>
+        
+        <fieldset>
+
+          <legend><span class="number">1</span>Presenta alguna de las siguientes enfermedades</legend>
+
+
+          <input type="checkbox" id="enfermedad" name="diabetes" th:checked="${diabetes}"><label for="enfermedad" class="light">Diabetes</label><br>
+
+          <input type="checkbox" id="enfermedad" name="diabetes" th:checked="${diabetes}"><label for="enfermedad" class="light">Enfermedad Cardiovascular</label><br>
+
+          <input type="checkbox" id="enfermedad" name="cerebro" th:checked="${cerebro}"><label for="enfermedad" class="light">Accidente cerebro vascular</label><br>
+
+          <input type="checkbox" id="enfermedad" name="vih" th:checked="${vih}"><label for="enfermedad" class="light">VIH</label><br>
+
+          <input type="checkbox" id="enfermedad" name="cancer" th:checked="${cancer}"><label for="enfermedad" class="light">Cancer</label><br>
+
+          <input type="checkbox" id="enfermedad" name="corticoides" th:checked="${corticoides}"><label for="enfermedad" class="light">Uso de corticoides</label><br>
+
+          <input type="checkbox" id="enfermedad" name="epoc" th:checked="${epoc}"><label for="enfermedad" class="light">Enfermedad Obstructiva Cronica</label><br>
+
+          <input type="checkbox" id="enfermedad" name="nutricion" th:checked="${nutricion}"><label for="enfermedad" class="light">Malnutricion</label><br>
+
+          <input type="checkbox" id="enfermedad" name="fumador" th:checked="${fumador}"><label for="enfermedad" class="light">Fumador</label><br>
+          
+<input id="documento" name="documento" type="hidden" th:value="${documento}"/>
+   
+        </fieldset>
+    
+        <button type="submit">Actualizar</button>
+      </form>
+      
+    </body>
+</html>
+</body>
+</html>

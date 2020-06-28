@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registro Ingreso</title>
+        <link rel="stylesheet" th:href="@{/css/normalize.css}">
+        <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" th:href="@{/css/estilo.css}">
+
+
+    </head>
+
+    <body>
+      <br>
+      <br>
+
+      <form th:action="@{/home/registrarComunidad}" method="post">
+      
+        <h1>Cormobilidades</h1>
+        
+        <fieldset>
+
+          <legend><span class="number">1</span>Presenta alguno de los siguientes sintomas</legend>
+
+
+          <input type="checkbox" id="sintomas" name="tos" th:checked="${tos}"><label for="sintomas" class="light">Tos seca</label><br>
+
+          <input type="checkbox" id="sintomas" name="malestar" th:checked="${malestar}"><label for="sintomas" class="light">Malestar General</label><br>
+
+          <input type="checkbox" id="sintomas" name="fatiga" th:checked="${fatiga}"><label for="sintomas" class="light">Fatiga</label><br>
+
+          <input type="checkbox" id="sintomas" name="nasal" th:checked="${nasal}"><label for="sintomas" class="light">Secrecion Nasal</label><br>
+
+          <input type="checkbox" id="sintomas" name="garganta" th:checked="${garganta}"><label for="sintomas" class="light">Dolor de garganta</label><br>
+
+          <input type="checkbox" id="sintomas" name="dificultad" th:checked="${dificultad}"><label for="sintomas" class="light">Dificultad para respirar</label><br>
+          <br>
+          <br>
+	<input id="documento" name="documento" type="hidden" th:value="${documento}"/>
+        
+          <label for="temperatura">Temperatura:</label>
+          <input type="number" required="required" id="temperatura" name="temperatura">
+
+
+          </select>
+
+   
+        </fieldset>
+    
+        </fieldset>
+        <button type="submit">Actualizar</button>
+      </form>
+      </fieldset>
+      
+   
+    </body>
+</html>
+</body>
+</html>
